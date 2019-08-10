@@ -67,7 +67,7 @@ time.sleep(3)
 flyingToInput = driver.find_element_by_xpath("//input[@id='flight-destination-hp-flight']")
 
 #7. Set the Flight To Object Value
-flyingToInput.send_keys("TAS")
+flyingToInput.send_keys("MOSCOW")
 
 
 time.sleep(3)
