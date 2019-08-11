@@ -2,6 +2,8 @@ from selenium import webdriver
 
 from selenium.webdriver.support.ui import Select
 
+import time
+
 
 import time
 
@@ -54,6 +56,14 @@ lastName.send_keys("Solly")
 email = driver.find_element_by_xpath("//input[@name='reg_email__']")
 
 email.send_keys("elyorsolly@mail.ru")
+
+time.sleep(2)
+
+
+ReEnterEmail = driver.find_element_by_xpath("//input[@name='reg_email_confirmation__']")
+
+ReEnterEmail.send_keys("elyorsolly@mail.ru")
+
 
 
 newRegPassword = driver.find_element_by_xpath("reg_passwd__")
