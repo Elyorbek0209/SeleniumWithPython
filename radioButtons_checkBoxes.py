@@ -57,7 +57,7 @@ email = driver.find_element_by_xpath("//input[@name='reg_email__']")
 
 email.send_keys("elyorsolly@mail.ru")
 
-time.sleep(2)
+time.sleep(1)
 
 
 ReEnterEmail = driver.find_element_by_xpath("//input[@name='reg_email_confirmation__']")
@@ -66,7 +66,7 @@ ReEnterEmail.send_keys("elyorsolly@mail.ru")
 
 
 
-newRegPassword = driver.find_element_by_xpath("reg_passwd__")
+newRegPassword = driver.find_element_by_xpath("//input[@name='reg_passwd__']")
 
 newRegPassword.send_keys("abcd1245@")
 
@@ -79,6 +79,7 @@ monthDD = driver.find_element_by_xpath("//select[@id = 'month']")
 dayDD = driver.find_element_by_xpath("//select[@id = 'day']")
 yearDD = driver.find_element_by_xpath("//select[@id = 'year']")
 
+
 #2nd we should create 'Select' class Element
 
 month = Select(monthDD)
@@ -86,6 +87,46 @@ month = Select(monthDD)
 day = Select(dayDD)
 
 year = Select(yearDD)
+
+
+# Here we use ".options" method with "Select" Object & it'll return all the option from drop down list
+
+print(len(month.options))  # 13
+
+print(len(day.options))  # 32
+
+print(len(year.options))  # 116
+
+
+#--- HOW WE CAPTURE ALL THE OPTIONS AND PRINT THEM AS OUTPUT? ---
+
+
+allMonth_options = month.options
+
+
+for option in allMonth_options:
+
+    print(option.text)
+
+
+"""
+Month
+Jan
+Feb
+Mar
+Apr
+May
+Jun
+Jul
+Aug
+Sep
+Oct
+Nov
+Dec
+"""
+
+#--------------------------------------------------------------------
+
 
 
 #3rd we'll select the Element "by Visible Text", "by Index", "by Value"
@@ -102,14 +143,14 @@ year.select_by_value("1992")
 
 genderRadioButton = driver.find_element_by_xpath("//input[@value='2']")
 
-status = genderRadioButton.is_selected();
+status = genderRadioButton.is_selected() # return true or false
 
-print('status')
+print(status) # false
 
 
 genderRadioButton.click()
 
-
+driver.quit()
 
 
 
