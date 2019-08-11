@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import Select
 import time
 
 
-import time
+
 
 
 #---------DECLARING VARIABLES -------------
