@@ -1,6 +1,6 @@
 from selenium import webdriver
 
-from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.by import By
 
 import time
 
@@ -13,7 +13,7 @@ chromePath = "/home/elyor/Selenium/chromedriver"
 
 geckoPath = "/home/elyor/Selenium/geckodriver"
 
-URL = "https://www.facebook.com/"
+URL = "https://www.expedia.com/"
 
 
 #---------END OF THE DECLARING VARIABLES -------------
@@ -38,4 +38,19 @@ driver.maximize_window()
 driver.get(URL)
 
 
-#-----WORKING WITH RADIO BUTTONS -----
+#-----WORKING WITH LINKS -----
+
+links = driver.find_elements(By.TAG_NAME, "a")
+
+NumberOfLinks = len(links)
+
+print("Number of Links present:", NumberOfLinks)  # output:  Number of Links present: 481
+
+
+
+
+
+
+
+driver.quit()
+
