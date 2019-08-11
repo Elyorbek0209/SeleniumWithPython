@@ -7,11 +7,6 @@ from selenium.webdriver.common.keys import Keys
 
 import time
 
-chromePath = "/home/elyor/Selenium/chromedriver"
-
-geckoPath = "/home/elyor/Selenium/geckodriver"
-
-URL = "https://www.surveymonkey.com/"
 
 #---------DECLARING VARIABLES -------------
 

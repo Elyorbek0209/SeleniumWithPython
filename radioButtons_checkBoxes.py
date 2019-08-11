@@ -5,11 +5,6 @@ from selenium.webdriver.support.ui import Select
 
 import time
 
-chromePath = "/home/elyor/Selenium/chromedriver"
-
-geckoPath = "/home/elyor/Selenium/geckodriver"
-
-URL = "https://www.facebook.com/"
 
 #---------DECLARING VARIABLES -------------
 
@@ -18,7 +13,7 @@ chromePath = "/home/elyor/Selenium/chromedriver"
 
 geckoPath = "/home/elyor/Selenium/geckodriver"
 
-URL = "https://www.surveymonkey.com/"
+URL = "https://www.facebook.com/"
 
 
 #---------END OF THE DECLARING VARIABLES -------------
