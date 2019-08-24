@@ -13,7 +13,7 @@ chromePath = "/home/elyor/Selenium/chromedriver"
 
 geckoPath = "/home/elyor/Selenium/geckodriver"
 
-URL = "https://gojs.net/latest/samples/htmlDragDrop.html"
+URL = "https://demo.automationtesting.in/FileDownload.html"
 
 
 #---------END OF THE DECLARING VARIABLES -------------
@@ -46,50 +46,4 @@ driver.get(URL)
 
 
 
-#---------- MOUSE ACTIONS --------
-
-#- Mouse Hover
-
-#- Double Click
-
-#- Right Click
-
-#- Drag and Drop
-
-#--------------------------------
-
-
-#1 Here is Element XPATH which we should DRAG
-
-source_Element = driver.find_element_by_xpath("//div[contains(text(),'Water')]")
-
-
-#2 Here is Element XPATH where we should DROP it
-
-target_Element = driver.find_element_by_xpath("//*[@id='myDiagramDiv']/canvas")
-
-
-#3 Now our job is DRAG "source_Element" into "target_Element"
-
-#Creating "ActionChains" Object
-actions = ActionChains(driver)
-
-actions.drag_and_drop(source_Element, target_Element).perform()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#---------- UPLOADING FILE --------

@@ -13,7 +13,7 @@ chromePath = "/home/elyor/Selenium/chromedriver"
 
 geckoPath = "/home/elyor/Selenium/geckodriver"
 
-URL = "https://gojs.net/latest/samples/htmlDragDrop.html"
+URL = "https://www.toolsqa.com/automation-practice-form/"
 
 
 #---------END OF THE DECLARING VARIABLES -------------
@@ -46,35 +46,44 @@ driver.get(URL)
 
 
 
-#---------- MOUSE ACTIONS --------
+#---------- UPLOADING FILE --------
 
-#- Mouse Hover
-
-#- Double Click
-
-#- Right Click
-
-#- Drag and Drop
-
-#--------------------------------
+#Switching the Frame
+#driver.switch_to_frame(0)
 
 
-#1 Here is Element XPATH which we should DRAG
+#Here is Paticular Element XPATH
 
-source_Element = driver.find_element_by_xpath("//div[contains(text(),'Water')]")
+uploadElement = driver.find_element_by_xpath("//input[@name='photo']")
+
+print(uploadElement)
+
+#SCROLLING PAGE UNTIL ELEMENT EXIST
+
+driver.execute_script("arguments[0].scrollIntoView()", uploadElement)
+
+time.sleep(3)
+
+#Uploading FilePath
+FilePath = "//home//elyor//Pictures//bike.resized.png"
+
+#With "send_keys()" Method, we'll pass the file
+uploadElement.send_keys(FilePath)
+
+print("File Uploaded Successfully")
 
 
-#2 Here is Element XPATH where we should DROP it
-
-target_Element = driver.find_element_by_xpath("//*[@id='myDiagramDiv']/canvas")
 
 
-#3 Now our job is DRAG "source_Element" into "target_Element"
 
-#Creating "ActionChains" Object
-actions = ActionChains(driver)
 
-actions.drag_and_drop(source_Element, target_Element).perform()
+
+
+
+
+
+
+
 
 
 
