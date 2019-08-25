@@ -27,23 +27,27 @@ import logging
 LogFilePath = "//home//elyor//Selenium//seleniumLogs//test.log"
 
 logging.basicConfig(filename=LogFilePath, format='%(asctime)s: %(levelname)s: %(message)s',
-datefmt='%m/%d/%Y %I:%M:%S %p',level=logging.DEBUG)
+datefmt='%m/%d/%Y %I:%M:%S %p')
 
 
-logging.error("This is Error Message")
+logger = logging.getLogger()
 
-logging.warn("This is Warning Message")
+logger.setLevel(logging.DEBUG)
 
-logging.critical("This is Critical message")
+
+logger.error("This is Error Message")
+
+logger.warn("This is Warning Message")
+
+logger.critical("This is Critical message")
 
 
 print("Login Created")
 
 # DEBUG & INFO will not print it here
-logging.debug("This is Debug Message")
+logger.debug("This is Debug Message")
 
-logging.info("This is Info Message")
-
+logger.info("This is Info Message")
 
 
 
