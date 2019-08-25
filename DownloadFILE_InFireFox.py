@@ -20,29 +20,44 @@ URL = "https://www.toolsqa.com/automation-practice-form/"
 
 
 
-#---------- DOWNLOADING TEXT FILE -------------
-
-#1st thing we'll import "Options" Class from "selenium.webdriver.chrome.options"
-
-#2nd we'll create "Options" Class Object
-
-chromeOptions = Options()
+#---------- DOWNLOADING TEXT FILE IN FIREFOX -------------
 
 
-#3rd with "Options" Class object, we'll use ".add_experimental_option()" Method to Give Location for our Download
+#1st we should ADD some Preferences here
 
-chromeOptions.add_experimental_option("prefs", {"download.default_directory": "//home//elyor//Selenium//CHROME_Download"})
+#Creating "FirefoxProfile()" Class Object
+
+firefoxPro = webdriver.FirefoxProfile()
+
+
+#2nd we'll use ".set_preference()" Method to add all kind of preferences
+
+firefoxPro.set_preference("browser.helpApps.neverAsk.saveToDisk", "text/plain,application/pdf")
+
+
+firefoxPro.set_preference("browser.download.manager.showWhenStarting", False)
+
+
+firefoxPro.set_preference("browser.download.dir", "//home//elyor//Selenium//CHROME_Download")
+
+
+firefoxPro.set_preference("browser.download.folderList", 2)
+
+
+firefoxPro.set_preference("pdfjs.disabled", True)
+
 
 #------------------------------------------------
+
 
 print("Options Class object created")
 
 
 #---DECLARING WEBDRIVER CHROME
 
-driver = webdriver.Chrome(executable_path=chromePath, chrome_options=chromeOptions)
+driver = webdriver.Firefox(executable_path=geckoPath, firefox_profile=firefoxPro)
 
-print("Chrome Class Driver Created")
+print("Firefox Class Driver Created")
 
 
 #---------------------------------------------------------
@@ -63,11 +78,10 @@ driver.maximize_window()
 #1 Launching URL
 driver.get(URL)
 
-
 download_Element = driver.find_element_by_xpath("//a[contains(text(),'Selenium Automation')]")
 
 
-#SCROLLING PAGE UNTIL ELEMENT EXIST
+#2 SCROLLING PAGE UNTIL ELEMENT EXIST
 
 driver.execute_script("arguments[0].scrollIntoView()", download_Element)
 
@@ -75,32 +89,8 @@ time.sleep(3)
 
 print("Page Scrolled Successfully")
 
-#Download Link
+
+#3 Click to Download File
 download_Element.click()
 
-time.sleep(3)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("File Saved")
