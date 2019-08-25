@@ -125,8 +125,3 @@ for r in range(2, rows+1):
 
 
 
-
-
-
-
-
