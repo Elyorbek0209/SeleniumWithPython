@@ -20,7 +20,7 @@ driver = webdriver.Chrome(executable_path = chromePath)
 
 
 driver.get(URL)
-d
+
 
 print(driver.title) # capture the the title of the page
 

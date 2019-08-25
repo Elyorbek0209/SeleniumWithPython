@@ -1,5 +1,19 @@
 import unittest
 
+
+#----------setUpModule will be execute before the Class & Method ---
+
+def setUpModule():
+
+    print("Set Up Module")
+
+
+def tearDownModule():
+    print("Tear Down Module")
+#-----------------------------------
+
+
+
 class AppTesting(unittest.TestCase):
 
 
