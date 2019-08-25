@@ -27,7 +27,7 @@ import logging
 LogFilePath = "//home//elyor//Selenium//seleniumLogs//test.log"
 
 logging.basicConfig(filename=LogFilePath, format='%(asctime)s: %(levelname)s: %(message)s',
-level=logging.DEBUG)
+datefmt='%m/%d/%Y %I:%M:%S %p',level=logging.DEBUG)
 
 
 logging.error("This is Error Message")
