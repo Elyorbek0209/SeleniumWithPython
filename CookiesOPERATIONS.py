@@ -96,8 +96,7 @@ print(cookies)
 
 
 
-
-#Deleting Cookies
+#Deleting NEW ADDED Cookies
 driver.delete_cookie('MyNewcookie')
 
 
@@ -116,6 +115,25 @@ print(len(cookies))
 print(cookies)
 #---------------------------------------------------------------------------
 
+
+
+#Deleting All the COOKIES
+driver.delete_all_cookies()
+
+
+#-----------------We'll find NUMBER of cookies after DELETING new Cookie----
+
+# Capture all the Cookies created by Browser
+cookies = driver.get_cookies()
+
+
+#Print Number of cookies have ben Created
+print(len(cookies))
+
+
+#Print All the COOKIE PAIRS
+print(cookies)
+#---------------------------------------------------------------------------
 
 
 
