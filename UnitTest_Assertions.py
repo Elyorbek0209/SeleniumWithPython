@@ -23,6 +23,10 @@ from selenium import webdriver
 
 # - assertNotEqual
 
+# - assertTrue
+
+# - assertFalse
+
 #--------------------------------------
 
 
@@ -47,7 +51,13 @@ class Test(unittest.TestCase):
 
 
         #assertEqual
-        self.assertEqual("Google", Title)
+        #self.assertEqual("Google", Title, "WebPage Title is Not the Same as Expected")
+
+
+        #assertNotEqual
+        self.assertNotEqual("Google123", Title, "WebPage Title is Not the same as Expected")
+
+        driver.quit()
 
 
 
