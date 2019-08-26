@@ -2,7 +2,7 @@ import unittest
 
 class PaymentTest(unittest.TestCase):
 
-    def paymentInDollar(self):
+    def payment_InDollar(self):
 
         print("This is Payment in Dollar test")
 
@@ -10,7 +10,7 @@ class PaymentTest(unittest.TestCase):
 
 
 
-    def paymentInRubl(self):
+    def payment_InRubl(self):
 
         print("This is Payment in Rubl test")
 
@@ -18,16 +18,7 @@ class PaymentTest(unittest.TestCase):
 
 
 
-    def paymentInSum(self):
-
-        print("This is Payment in Sum test")
-
-        self.assertTrue(True)
-
-    print("Hello Money")
-
-
-if __name__=="__main__":
+if __name__ == "__main__":
 
     unittest.main()
 
