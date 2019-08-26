@@ -38,8 +38,8 @@ functionalTestSuite = unittest.TestSuite([TC3, TC4])
 
 
 #3 Here we use ".TextTestRunner()" Method & RUN "sanityTestSuite" above
+#unittest.TextTestRunner(verbosity=2).run(functionalTestSuite)
 unittest.TextTestRunner().run(functionalTestSuite)
-
 
 
 

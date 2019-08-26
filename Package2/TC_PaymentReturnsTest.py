@@ -3,7 +3,7 @@ import unittest
 class PaymentReturnsTest(unittest.TestCase):
 
 
-    def paymentReturnByBank(self):
+    def test_paymentReturnByBank(self):
 
         print("This is Payment Return By Bank Test")
 
