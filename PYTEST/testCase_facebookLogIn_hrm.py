@@ -149,7 +149,10 @@ if __name__=='__main':
 
     #To Generate the we'll use
     # "testRunner=HtmlTestRunner.HTMLTestRunner(output='..\\REPORTS'))" inside the parenthesis
-    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='//home//elyor//PycharmProjects//Selenium//REPORTS')) # (..\\) - means current project directory)
+
+    #To run the Test we'll use TERMINAL & "pytest -v -s PYTEST/testCase_facebookLogIn_hrm.py" command
+
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='//home//elyor//PycharmProjects//Selenium//REPORTS//')) # (..//REPORTS) - means current project directory)
 
 
 
