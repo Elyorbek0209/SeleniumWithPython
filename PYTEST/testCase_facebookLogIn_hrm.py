@@ -93,12 +93,35 @@ class FacebookHRMTest(unittest.TestCase):
         loginButton.click()
 
 
-
         #4 Verifying Login is Successful or Not
 
-        self.assertEqual("Logi")
+        self.assertEqual("Facebook", self.driver.title, 'Login was Not Successful')
 
 
+
+    # Step 4: Log Out From Application
+    def test_logOut(self):
+        # 1.Click Log Out Drop down
+        logOutDropDown = self.driver.find_element_by_xpath("//div[@id='userNavigationLabel']")
+
+        logOutDropDown.click()
+
+        # 2. Select Log Out From List
+        logOutButton = self.driver.find_element_by_xpath("//span[contains(text(),'Log Out')]")
+
+        logOutButton.click()
+
+
+
+
+    # Step 5: Close the Application
+    def tearDown(cls):
+
+
+        #1 Close all the browser
+        cls.driver.quit()
+
+        print("Test completed")
 
 
 
