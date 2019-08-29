@@ -1,8 +1,16 @@
 from selenium import webdriver
 
-import XLUtils
+#To work with the Unit Test we'll Import "unittest"
+import unittest
 
-import time
+#To Generate the HTML Test Report we'll import "HtmlTestRunner"
+import HtmlTestRunner
+
+
+
+#---------PYTHON UNITTEST HTML TESTRUNNER REPORTS-------
+
+
 
 #---------DECLARING VARIABLES -------------
 
@@ -12,24 +20,109 @@ chromePath = "/home/elyor/Selenium/chromedriver"
 
 geckoPath = "/home/elyor/Selenium/geckodriver"
 
-URL = "https://en-gb.facebook.com/login/"
+URL = "https://www.facebook.com/"
+
+#-----------TEST CASE------------
+
+#Step 1: Launch Browser
+
+#Step 2: Verify Home Page Title
+
+#Step 3: Verify Login
+
+#Step 4: Close Browser
 
 
-#---------END OF THE DECLARING VARIABLES -------------
+#-------------------------------------
+
+#We can create a FUNCTION in a PYTHON without Having the Class
+#We can't create the METHOD in a PYTHON without Class
+#That's a DIFFERENCE between FUNCTION & METHOD in PYTHON
+
+#So If I don't have any Class & I can Create directly FUNCTION
+#If Insert the same FUNCTION inside the Class that's call METHOD
+
+#--------------------------------------
+
+#Here we are Extending our FacebookHRMTest Class with "unittest.TestCase"
+class FacebookHRMTest(unittest.TestCase):
 
 
-#---DECLARING WEBDRIVER CHROME or IE...---
-driver = webdriver.Chrome(executable_path= chromePath)
+    #Here Inside the Class we'll create Multiple Methods
+
+    #Step 1 Launch the Browser
+    def setUpClass(cls): #predefined class & it will execute only one time before actual method we'll start
+
+        cls.driver = webdriver.Chrome(executable_path=chromePath)
+
+        # ---MAXIMIZE THE WINDOW ---
+        cls.driver.maximize_window()
 
 
-#--- DELETE ALL THE COOKIES BEFORE START ---
-driver.delete_all_cookies()
 
-#---DECLARE IMPLICIT WAIT FOR ALL OBJECT---
-driver.implicitly_wait(5)
+    #Step 2 Verify Home Page Title
+    def test_homePageTitle(self):
 
-#---MAXIMIZE THE WINDOW ---
-driver.maximize_window()
+        self.driver.get(URL)
+
+        #Verifying TITLE with "assert" Method
+        self.assertEqual("Go to Facebook Home", self.driver.title, 'WebPage Title is not Matching')
 
 
-driver.get(URL)
+
+    # Step 3: Verify Login
+    def test_login(self):
+
+
+        #1 Set Username
+        email = self.driver.find_element_by_id("email")
+
+        email.send_keys("esoliev1661@gmail.com")
+
+
+        #2 Set Password
+        password = self.driver.find_element_by_id("pass")
+
+        password.send_keys("Aisha2018$")
+
+
+        #3 LoginButton
+
+        loginButton = self.driver.find_element_by_xpath("//input[@value='Log In']")
+
+        loginButton.click()
+
+
+
+        #4 Verifying Login is Successful or Not
+
+        self.assertEqual("Logi")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
