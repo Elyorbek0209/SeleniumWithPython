@@ -1,3 +1,4 @@
+import HtmlTestRunner
 from selenium import webdriver
 
 #1. To make a Unit Test We should 1st IMPORT Python BuildIn Unit Test Module
@@ -36,21 +37,21 @@ class GoogleSearch(unittest.TestCase):
         geckoPath = "/home/elyor/Selenium/geckodriver"
 
 
-        driver = webdriver.Chrome(executable_path=chromePath)
+        cls.driver = webdriver.Chrome(executable_path=chromePath)
 
         # 2. ---IMPLICIT WAIT--> Applicable for all the Element of the page & only 1 Time we'll Specify this code at the beggining of the Code
-        driver.implicitly_wait(10)
+        cls.driver.implicitly_wait(10)
 
         # 3. Maximize Window
-        driver.maximize_window()
+        cls.driver.maximize_window()
+
 
 
 
     #Now I'll Create test Method & NOTE: it should START with "test" word
     def test_search_automationStepByStep(self):
-        URL = "https://www.google.com"
 
-        EXPECTED_TITLE = "Google"
+        URL = "https://www.google.com"
 
         # Launch the URL
         self.driver.get(URL)
@@ -68,10 +69,10 @@ class GoogleSearch(unittest.TestCase):
 
 
 
-    def test_search_MyName(self):
-        URL = "https://www.google.com"
 
-        EXPECTED_TITLE = "Google"
+    def test_search_myName(self):
+
+        URL = "https://www.google.com"
 
         # Launch the URL
         self.driver.get(URL)
@@ -92,15 +93,19 @@ class GoogleSearch(unittest.TestCase):
     def tearDownClass(cls):
 
 
-       # cls.driver.close()
+        cls.driver.close()
 
-       # cls.driver.quit()
+        cls.driver.quit()
 
         print("Test Completed")
 
 
 
+if __name__ == '__main__':
 
+    ReportPath = "/home/elyor/PycharmProjects/Selenium/REPORTS"
+
+    unittest.main(testRunner=HtmlTestRunner.HtmlTestRunner(output=ReportPath))
 
 
 
