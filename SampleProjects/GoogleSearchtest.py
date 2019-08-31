@@ -1,5 +1,7 @@
 import HtmlTestRunner
 from selenium import webdriver
+import time
+
 
 #1. To make a Unit Test We should 1st IMPORT Python BuildIn Unit Test Module
 import unittest
@@ -67,6 +69,10 @@ class GoogleSearch(unittest.TestCase):
 
         googleSearchButton.click()
 
+        time.sleep(3)
+
+
+
 
 
 
@@ -88,24 +94,28 @@ class GoogleSearch(unittest.TestCase):
 
         googleSearchButton.click()
 
+        time.sleep(3)
+
+
+
 
     @classmethod
     def tearDownClass(cls):
-
 
         cls.driver.close()
 
         cls.driver.quit()
 
-        print("Test Completed")
+        cls.print("Test Completed")
 
 
 
 if __name__ == '__main__':
 
-    ReportPath = "/home/elyor/PycharmProjects/Selenium/REPORTS"
+    ReportPath = '/home/elyor/PycharmProjects/Selenium/REPORTS'
 
-    unittest.main(testRunner=HtmlTestRunner.HtmlTestRunner(output=ReportPath))
+    unittest.main(testRunner = HtmlTestRunner.HTMLTestRunner(output = ReportPath))
 
 
 
+time.sleep(3)
