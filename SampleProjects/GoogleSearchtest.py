@@ -92,9 +92,9 @@ class GoogleSearch(unittest.TestCase):
     def tearDownClass(cls):
 
 
-        cls.driver.close()
+       # cls.driver.close()
 
-        cls.driver.quit()
+       # cls.driver.quit()
 
         print("Test Completed")
 
