@@ -2,6 +2,11 @@ import HtmlTestRunner
 from selenium import webdriver
 import time
 
+from SampleProjects.POM_Project.Pages.loginPage import LoginPage
+
+from SampleProjects.POM_Project.Pages.homePage import HomePage
+
+
 
 #1. To make a Unit Test We should 1st IMPORT Python BuildIn Unit Test Module
 import unittest
@@ -61,53 +66,37 @@ class LoginTest(unittest.TestCase):
 
         URL = "https://opensource-demo.orangehrmlive.com/"
 
+        driver = self.driver
+
+
         # Launch the URL
-        self.driver.get(URL)
+        driver.get(URL)
+
+        #Create LoginPage Object
+        login = LoginPage(driver)
 
 
-        # Set Username
-        userName = self.driver.find_element_by_xpath("//input[@id='txtUsername']")
+        #1
+        login.enter_username("Admin")
 
-        userName.send_keys("Admin")
+        #2
+        login.enter_password("admin123")
 
-
-
-        # Set password
-
-        password= self.driver.find_element_by_xpath("//input[@id='txtPassword']")
-
-        password.send_keys("admin123")
-
-
-
-
-
-        # Click LOGIN Button
-
-        login = self.driver.find_element_by_xpath("//input[@id='btnLogin']")
-
-        login.click()
-
-        time.sleep(3)
+        #3
+        login.click_login_button()
 
 
 
 
-        # Click Welcome Link
-
-        welcomeLink = self.driver.find_element_by_xpath("//a[@id='welcome']")
-
-        welcomeLink.click()
+        #create HomePage Object
+        homepage = HomePage(driver)
 
 
+        #1
+        homepage.click_WelcomeLink()
 
-
-        #Click LogOut Button
-
-        logOut = self.driver.find_element_by_xpath("//a[contains(text(),'Logout')]")
-
-        logOut.click()
-
+        #2
+        homepage.click_LogOut()
 
 
 
