@@ -1,3 +1,6 @@
+from SampleProjects.POM_Project.Locators.locators import Locators
+
+
 class HomePage():
 
 
@@ -6,9 +9,9 @@ class HomePage():
         self.driver = driver
 
 
-        self.welcomeLinkXPATH = "//a[@id='welcome']"
+        self.welcomeLinkXPATH = Locators.welcomeLinkXPATH
 
-        self.logOutXPATH = "//a[contains(text(),'Logout')]"
+        self.logOutXPATH = Locators.logOutXPATH
 
 
 

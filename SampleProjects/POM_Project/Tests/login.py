@@ -2,6 +2,13 @@ import HtmlTestRunner
 from selenium import webdriver
 import time
 
+import sys
+
+import os
+
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
+
+
 from SampleProjects.POM_Project.Pages.loginPage import LoginPage
 
 from SampleProjects.POM_Project.Pages.homePage import HomePage

@@ -1,3 +1,6 @@
+from SampleProjects.POM_Project.Locators.locators import Locators
+
+
 class LoginPage():
 
     def __init__(self, driver):
@@ -5,11 +8,11 @@ class LoginPage():
         self.driver = driver
 
 
-        self.userNameXPATH="//input[@id='txtUsername']"
+        self.userNameXPATH=Locators.userNameXPATH
 
-        self.passwordXPATH = "//input[@id='txtPassword']"
+        self.passwordXPATH = Locators.passwordXPATH
 
-        self.logIn_ButtonXPATH = "//input[@id='btnLogin']"
+        self.logIn_ButtonXPATH = Locators.logIn_ButtonXPATH
 
 
 
