@@ -50,6 +50,7 @@ class GoogleSearch(unittest.TestCase):
 
 
 
+
     #Now I'll Create test Method & NOTE: it should START with "test" word
     def test_search_automationStepByStep(self):
 
@@ -102,8 +103,6 @@ class GoogleSearch(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
 
-        cls.driver.close()
-
         cls.driver.quit()
 
         cls.print("Test Completed")
@@ -119,3 +118,14 @@ if __name__ == '__main__':
 
 
 time.sleep(3)
+
+
+
+
+
+
+
+
+
+
+
