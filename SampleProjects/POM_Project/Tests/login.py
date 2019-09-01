@@ -69,7 +69,7 @@ class LoginTest(unittest.TestCase):
 
 
     # Now I'll Create test Method & NOTE: it should START with "test" word
-    def test_login_valid(self):
+    def test_login_valid_01(self):
 
         URL = "https://opensource-demo.orangehrmlive.com/"
 
@@ -93,8 +93,6 @@ class LoginTest(unittest.TestCase):
         login.click_login_button()
 
 
-
-
         #create HomePage Object
         homepage = HomePage(driver)
 
@@ -106,6 +104,51 @@ class LoginTest(unittest.TestCase):
         homepage.click_LogOut()
 
 
+
+
+
+
+    def test_login_invalid_02(self):
+
+        URL = "https://opensource-demo.orangehrmlive.com/"
+
+        driver = self.driver
+
+
+        # Launch the URL
+        driver.get(URL)
+
+        #Create LoginPage Object
+        login = LoginPage(driver)
+
+
+        #1
+        login.enter_username("Admin")
+
+        #2
+        login.enter_password("admin123")
+
+        #3
+        login.click_login_button()
+
+
+        #4 Verify
+        message = driver.find_element_by_xpath("//span[@id=spanMessage]").text
+
+        self.assertEqual(message, "Invalid credentials123")
+
+
+
+
+        #create HomePage Object
+        homepage = HomePage(driver)
+
+
+        #1
+        homepage.click_WelcomeLink()
+
+        #2
+        homepage.click_LogOut()
 
 
 
